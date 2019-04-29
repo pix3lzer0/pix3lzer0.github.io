@@ -294,6 +294,13 @@
 <p>可以看到仅仅是判断了cookie里面的adminname，如果不为空，就可以进入后台。</p>
 <p>伪造一个cookie，值为plz123，然后发现成功登陆后台。</p>
 <p><img src="https://img.vim-cn.com/d9/3a795a1025d082939ff0c6123984299ab7e155.png" alt></p>
+<h1 id="delete注入"><a href="#delete注入" class="headerlink" title="delete注入"></a>delete注入</h1><p>先看看/admin/page/admincore/message.php</p>
+<p><img src="https://img.vim-cn.com/8c/8316ae294e99e9f72d41ce57702603286eca1e.png" alt></p>
+<p>很明显没有过滤，我们再来看看哪里引用了他。</p>
+<p>/admin/page/message/message.php</p>
+<p><img src="https://img.vim-cn.com/e7/b7856d671a69bf8b33443eb1dde5afaa803087.png" alt></p>
+<p>放到sqlmap里面跑一下，肯定有注入。</p>
+<p><img src="https://img.vim-cn.com/56/9a167073e05a6ab75161d496d10cb3aa2b1947.png" alt></p>
 
       
     </div>

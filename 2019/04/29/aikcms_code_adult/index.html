@@ -299,6 +299,13 @@
 <p>可以看到仅仅是判断了cookie里面的adminname，如果不为空，就可以进入后台。</p>
 <p>伪造一个cookie，值为plz123，然后发现成功登陆后台。</p>
 <p><img src="https://img.vim-cn.com/d9/3a795a1025d082939ff0c6123984299ab7e155.png" alt></p>
+<h1 id="delete注入"><a href="#delete注入" class="headerlink" title="delete注入"></a>delete注入</h1><p>先看看/admin/page/admincore/message.php</p>
+<p><img src="https://img.vim-cn.com/8c/8316ae294e99e9f72d41ce57702603286eca1e.png" alt></p>
+<p>很明显没有过滤，我们再来看看哪里引用了他。</p>
+<p>/admin/page/message/message.php</p>
+<p><img src="https://img.vim-cn.com/e7/b7856d671a69bf8b33443eb1dde5afaa803087.png" alt></p>
+<p>放到sqlmap里面跑一下，肯定有注入。</p>
+<p><img src="https://img.vim-cn.com/56/9a167073e05a6ab75161d496d10cb3aa2b1947.png" alt></p>
 
         </div>
         
@@ -310,7 +317,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-29T15:03:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-29T15:26:00+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2019年4月29日</p>
@@ -457,7 +464,7 @@
 </header>
 
     <div class="content pure">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#爱客CMS-2-0-0代码审计"><span class="toc-text">爱客CMS 2.0.0代码审计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#无需密码登陆后台"><span class="toc-text">无需密码登陆后台</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#爱客CMS-2-0-0代码审计"><span class="toc-text">爱客CMS 2.0.0代码审计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#无需密码登陆后台"><span class="toc-text">无需密码登陆后台</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#delete注入"><span class="toc-text">delete注入</span></a></li></ol>
     </div>
   </section>
 
