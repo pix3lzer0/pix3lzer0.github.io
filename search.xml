@@ -2,19 +2,6 @@
 <search> 
   
   
-    
-    <entry>
-      <title></title>
-      <link href="/2019/04/29/aikcms_code_adult/"/>
-      <url>/2019/04/29/aikcms_code_adult/</url>
-      
-        <content type="html"><![CDATA[<h1 id="爱客CMS-2-0-0代码审计"><a href="#爱客CMS-2-0-0代码审计" class="headerlink" title="爱客CMS 2.0.0代码审计"></a>爱客CMS 2.0.0代码审计</h1><p>下载地址：<a href="http://www.aikcms.com/download/%E7%88%B1%E5%AE%A2CMS2.0.zip" target="_blank" rel="noopener">http://www.aikcms.com/download/%E7%88%B1%E5%AE%A2CMS2.0.zip</a><br>版本：2.0.0</p><h2 id="无需密码登陆管理员账户"><a href="#无需密码登陆管理员账户" class="headerlink" title="无需密码登陆管理员账户"></a>无需密码登陆管理员账户</h2><p>先看看/admin/login.php</p><p><img src="https://img.vim-cn.com/81/9001cb185d4a67dcce1117ecdfec20e02a88cf.png" alt></p><p>可以看到，登陆成功后，会set一个名字为adminname的cookie。</p><p>再看看/admin/index.php</p><p><img src="https://img.vim-cn.com/d0/1eb95b8580335effee51953d02f83ab406e8c2.png" alt></p><p>可以看到仅仅是判断了cookie里面的adminname，如果不为空，就可以进入后台。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
   
   
 </search>
