@@ -296,11 +296,19 @@
 <p><img src="https://img.vim-cn.com/d9/3a795a1025d082939ff0c6123984299ab7e155.png" alt></p>
 <h1 id="delete注入"><a href="#delete注入" class="headerlink" title="delete注入"></a>delete注入</h1><p>先看看/admin/page/admincore/message.php</p>
 <p><img src="https://img.vim-cn.com/8c/8316ae294e99e9f72d41ce57702603286eca1e.png" alt></p>
-<p>很明显没有过滤，我们再来看看哪里引用了他。</p>
+<p>很明显没有过滤，我们再来看看哪里引用了它。</p>
 <p>/admin/page/message/message.php</p>
 <p><img src="https://img.vim-cn.com/e7/b7856d671a69bf8b33443eb1dde5afaa803087.png" alt></p>
 <p>放到sqlmap里面跑一下，肯定有注入。</p>
 <p><img src="https://img.vim-cn.com/56/9a167073e05a6ab75161d496d10cb3aa2b1947.png" alt></p>
+<h1 id="无需登陆任意文件上传"><a href="#无需登陆任意文件上传" class="headerlink" title="无需登陆任意文件上传"></a>无需登陆任意文件上传</h1><p>先看看/admin/page/admincore/admin.php</p>
+<p><img src="https://img.vim-cn.com/f0/2409d61113d7d78e1bee47541f57a05e2d4ea3.png" alt></p>
+<p>可以看到对文件名和后缀都没有进行过滤，找找哪个文件引用了它。</p>
+<p>/admin/page/system/admin.php</p>
+<p><img src="https://img.vim-cn.com/16/0cfe6b4d783398e29e05b4a483f151c28f17e8.png" alt></p>
+<p><img src="https://img.vim-cn.com/45/6a26aea4fde2854aed224d84843fe6dedc2241.png" alt></p>
+<p>上传成功，getshell。</p>
+<p><img src="https://img.vim-cn.com/3f/7dd0398b3b6db4166058769b5457bb3bafd7be.png" alt></p>
 
       
     </div>
