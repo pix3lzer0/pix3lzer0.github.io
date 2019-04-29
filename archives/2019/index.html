@@ -310,6 +310,13 @@
 <p><img src="https://img.vim-cn.com/45/6a26aea4fde2854aed224d84843fe6dedc2241.png" alt></p>
 <p>上传成功，getshell。</p>
 <p><img src="https://img.vim-cn.com/3f/7dd0398b3b6db4166058769b5457bb3bafd7be.png" alt></p>
+<h1 id="存储型XSS"><a href="#存储型XSS" class="headerlink" title="存储型XSS"></a>存储型XSS</h1><p>先看看/admin/page/system/link.php</p>
+<p><img src="https://img.vim-cn.com/4b/acc4f4d53331e9257ea55a433c119a62dfca4b.png" alt></p>
+<p>可以看到对输出没有任何过滤。</p>
+<p>我们添加一个友情链接。</p>
+<p><img src="https://img.vim-cn.com/8d/0b59ba92d62318a69590ac7b129f35eedc0168.png" alt></p>
+<p>然后访问/admin/page/system/link.php即可触发。</p>
+<p><img src="https://img.vim-cn.com/ab/79abbae25e28dd41b948940ac404dd0247c102.png" alt></p>
 
       
     </div>
